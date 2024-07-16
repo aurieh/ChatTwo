@@ -42,12 +42,16 @@ internal sealed class Display : ISettingsTab
 
         if (Mutable.HideWhenInactive)
         {
+            ImGui.TreePush();
+
             ImGuiUtil.InputIntVertical(Language.Options_InactivityHideTimeout_Name,
                 Language.Options_InactivityHideTimeout_Description, ref Mutable.InactivityHideTimeout, 1, 10);
             // Enforce a minimum of 2 seconds to avoid people soft locking
             // themselves.
             Mutable.InactivityHideTimeout = Math.Max(2, Mutable.InactivityHideTimeout);
             ImGui.Spacing();
+
+            ImGui.TreePop();
         }
 
         ImGuiUtil.OptionCheckbox(ref Mutable.PrettierTimestamps, Language.Options_PrettierTimestamps_Name, Language.Options_PrettierTimestamps_Description);
