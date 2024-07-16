@@ -1078,6 +1078,18 @@
     <data name="Options_HideInBattle_Description" xml:space="preserve">
         <value>Hide the chat during battles.</value>
     </data>
+    <data name="Options_InactivityHideWhenUnread_Name" xml:space="preserve">
+        <value>Hide unread tabs</value>
+    </data>
+    <data name="Options_InactivityHideWhenUnread_Description" xml:space="preserve">
+        <value>Hide when there are unread background tabs.</value>
+    </data>
+    <data name="Options_InactivityHideInBattle_Name" xml:space="preserve">
+        <value>Hide in battle</value>
+    </data>
+    <data name="Options_InactivityHideInBattle_Description" xml:space="preserve">
+        <value>Hide when in battle.</value>
+    </data>
     <data name="Options_Emote_EmoteStats" xml:space="preserve">
         <value>Emote Stats</value>
     </data>

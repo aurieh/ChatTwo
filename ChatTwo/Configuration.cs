@@ -43,6 +43,8 @@ internal class Configuration : IPluginConfiguration
     public bool HideInBattle;
     public bool HideWhenInactive;
     public int InactivityHideTimeout = 10;
+    public bool InactivityHideWhenUnread = true;
+    public bool InactivityHideInBattle = true;
     public bool ShowHideButton = true;
     public bool NativeItemTooltips = true;
     public bool PrettierTimestamps = true;
@@ -106,6 +108,8 @@ internal class Configuration : IPluginConfiguration
         HideInBattle = other.HideInBattle;
         HideWhenInactive = other.HideWhenInactive;
         InactivityHideTimeout = other.InactivityHideTimeout;
+        InactivityHideWhenUnread = other.InactivityHideWhenUnread;
+        InactivityHideInBattle = other.InactivityHideInBattle;
         ShowHideButton = other.ShowHideButton;
         NativeItemTooltips = other.NativeItemTooltips;
         PrettierTimestamps = other.PrettierTimestamps;

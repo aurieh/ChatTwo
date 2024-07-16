@@ -438,7 +438,15 @@ public sealed class ChatLogWindow : Window
         FrameTime = Environment.TickCount64;
         if (IsHidden)
             return false;
-        if (!Plugin.Config.HideWhenInactive || Activate)
+
+        var haveUnreadTabs = Plugin.Config.Tabs
+            .Where(tab => tab.UnreadMode is not UnreadMode.None && tab.Unread > 0)
+            .Any();
+
+        if (!Plugin.Config.HideWhenInactive
+            || (!Plugin.Config.InactivityHideInBattle && InBattle)
+            || (!Plugin.Config.InactivityHideWhenUnread && haveUnreadTabs)
+            || Activate)
         {
             LastActivityTime = FrameTime;
             return true;

@@ -51,6 +51,14 @@ internal sealed class Display : ISettingsTab
             Mutable.InactivityHideTimeout = Math.Max(2, Mutable.InactivityHideTimeout);
             ImGui.Spacing();
 
+            ImGuiUtil.OptionCheckbox(ref Mutable.InactivityHideWhenUnread,
+                Language.Options_InactivityHideWhenUnread_Name, Language.Options_InactivityHideWhenUnread_Description);
+            ImGui.Spacing();
+
+            ImGuiUtil.OptionCheckbox(ref Mutable.InactivityHideInBattle,
+                Language.Options_InactivityHideInBattle_Name, Language.Options_InactivityHideInBattle_Description);
+            ImGui.Spacing();
+
             ImGui.TreePop();
         }
 
