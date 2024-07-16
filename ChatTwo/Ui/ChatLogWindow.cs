@@ -335,7 +335,10 @@ public sealed class ChatLogWindow : Window
         return height;
     }
 
-    internal void ChangeTab(int index) => WantedTab = index;
+    internal void ChangeTab(int index) {
+        WantedTab = index;
+        LastActivityTime = FrameTime;
+    }
 
     internal void ChangeTabDelta(int offset)
     {
